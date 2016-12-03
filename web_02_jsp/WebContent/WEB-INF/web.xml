@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>web_02_jsp</display-name>
+
+<!-- 字符集过滤器 -->
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.kaishengit.web.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 判断是否登录 -->
+<!--   <filter>
+  	<filter-name>ValidateFilter</filter-name>
+  	<filter-class>com.kaishengit.web.filter.ValidateFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>ValidateFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+  
+  <servlet>
+    <description></description>
+    <display-name>AddServlet</display-name>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListServlet</display-name>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListServlet</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DelServlet</display-name>
+    <servlet-name>DelServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.DelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DelServlet</servlet-name>
+    <url-pattern>/del</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateServlet</display-name>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistServlet</display-name>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.RegistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/regist</url-pattern>
+  </servlet-mapping>
+  <!-- 验证码  -->
+  <servlet>
+    <description></description>
+    <display-name>patchcaServlet</display-name>
+    <servlet-name>patchcaServlet</servlet-name>
+    <servlet-class>com.kaishengit.web.patchca.patchcaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>patchcaServlet</servlet-name>
+    <url-pattern>/patchca.png</url-pattern>
+  </servlet-mapping>
+</web-app>
